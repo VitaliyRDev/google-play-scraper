@@ -8,7 +8,7 @@ const appMethod = require('./lib/app');
 
 const methods = {
   app: appMethod,
-  list: require('./lib/list'),
+  list: require('./lib/new_list'),
   search: R.partial(require('./lib/search'), [appMethod]),
   suggest: require('./lib/suggest'),
   developer: require('./lib/developer'),
@@ -31,7 +31,7 @@ function memoized (opts) {
   const mAppMethod = memoizee(appMethod, cacheOpts);
 
   const otherMethods = {
-    list: require('./lib/list'),
+    list: require('./lib/new_list'),
     search: R.partial(require('./lib/search'), [mAppMethod]),
     suggest: require('./lib/suggest'),
     developer: require('./lib/developer'),
